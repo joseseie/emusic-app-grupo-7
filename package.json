@@ -6,7 +6,8 @@
   "author": "Jose Seie <joseeugenioseie@hotmail.com>",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "deploy":  "quasar build -m pwa && firebase deploy"
   },
   "dependencies": {
     "axios": "^0.21.1",
