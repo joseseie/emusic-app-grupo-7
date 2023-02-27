@@ -2,46 +2,40 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title>eMusic App</q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn round>
+            <q-avatar size="42px">
+              <img src="https://cdn.quasar.dev/img/avatar2.jpg">
+            </q-avatar>
+
+          <q-menu>
+            <q-list style="min-width: 100px">
+              <q-item to="/" clickable v-close-popup exact>
+                <q-item-section>Inicio</q-item-section>
+              </q-item>
+              <q-item to="/musics" clickable v-close-popup exact>
+                <q-item-section>Musicas</q-item-section>
+              </q-item>
+              <q-item clickable v-close-popup exact>
+                <q-item-section>Musicas Baixadas</q-item-section>
+              </q-item>
+              <q-separator />
+              <q-item clickable v-close-popup exact>
+                <q-item-section>Login</q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
+
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
+
   </q-layout>
 </template>
 

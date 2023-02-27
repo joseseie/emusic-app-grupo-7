@@ -1,10 +1,17 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page class="flex flex-center bg-dark">
+
+    <div class="text-h6 text-grey-3">
+      <q-btn
+        to="/musics"
+        label="Ver As Musicas"
+        color="primary"
+        rounded
+        unelevated
+        size="lg"
+      />
+    </div>
+
   </q-page>
 </template>
 
