@@ -4,8 +4,24 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { useAuthStore } from "stores/auth-store";
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  setup () {
+
+    const authStore = useAuthStore()
+
+    return {
+      authStore,
+
+      initializeAuth() {
+        authStore.listenAuthChange()
+      }
+    }
+  },
+  mounted() {
+    this.initializeAuth()
+  }
 })
 </script>
